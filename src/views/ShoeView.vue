@@ -28,6 +28,7 @@
             :src="img"
             alt=""
             class="w-16 h-16 rounded-lg cursor-pointer focus:outline-none"
+            @click="change(img)"
             
           />
         </div>
@@ -73,9 +74,10 @@ const curPicIndex = computed(() =>{
 })
 
 function nextPic(){
+
   const curIndex = images.indexOf(curPic.value)
   const nextIndex = curIndex === images.length - 1 ? 0 : curIndex + 1
- //  console.log(nextIndex)
+ console.log(nextIndex)
 
  curPicIndex.value = nextIndex
   curPic.value = images[nextIndex]
@@ -86,14 +88,16 @@ function nextPic(){
 function prevPic(){
    const curIndex = images.indexOf(curPic.value)
    const prevIndex = curIndex === 0 ? images.length - 1 : curIndex - 1 
-    // console.log(prevIndex)
+    console.log(prevIndex)
     curPicIndex.value = prevIndex
    curPic.value = images[prevIndex]
      console.log(curPicIndex.value)
   
   
 }
-
+function change(img){
+  curPic.value = img
+}
 function changePic(index){
   curPic.value = images[index]
 
