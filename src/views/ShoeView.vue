@@ -68,7 +68,7 @@ const images = [
 const sizes = ['40', '41', '42', '42.5', '43', '44', '44.5', '45', '46']
 
 const curPic = ref(images[0])
-/* const curPicIndex = ref(images.indexOf(curPic.value)) */
+
 const curPicIndex = computed(() =>{
   return images.indexOf(curPic.value)
 })
@@ -77,9 +77,9 @@ function nextPic(){
 
   const curIndex = images.indexOf(curPic.value)
   const nextIndex = curIndex === images.length - 1 ? 0 : curIndex + 1
- console.log(nextIndex)
 
- curPicIndex.value = nextIndex
+
+ 
   curPic.value = images[nextIndex]
   console.log(curPicIndex.value)
 
@@ -88,8 +88,8 @@ function nextPic(){
 function prevPic(){
    const curIndex = images.indexOf(curPic.value)
    const prevIndex = curIndex === 0 ? images.length - 1 : curIndex - 1 
-    console.log(prevIndex)
-    curPicIndex.value = prevIndex
+    
+  
    curPic.value = images[prevIndex]
      console.log(curPicIndex.value)
   
