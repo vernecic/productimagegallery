@@ -27,7 +27,7 @@
             :key="index"
             :src="img"
             alt=""
-            class="w-16 h-16 rounded-lg cursor-pointer focus:outline-none"
+            class="w-16 h-16 rounded-lg cursor-pointer focus:outline-none hover:scale-105 hover:shadow-lg transition duration-200"
             @click="change(img)"
             
           />
@@ -39,10 +39,10 @@
           
         </div>
         <div class="mt-5 flex flex-col space-y-4">
-          <button class="text-center bg-black text-white px-6 py-4 font-semibold rounded-full cursor-pointer w-full hover:bg-gray-800  transition duration-200">
+          <button class="text-center bg-black text-white px-6 py-4 font-semibold rounded-full cursor-pointer w-full shadow-xl hover:bg-gray-800  transition duration-200">
            <h1>Add to Bag</h1>
           </button>
-           <button class="text-center border border-black  px-6 py-4 font-semibold rounded-full cursor-pointer w-full hover:bg-slate-200  transition duration-200">
+           <button class="text-center border border-black  px-6 py-4 font-semibold rounded-full cursor-pointer w-full shadow-xl hover:bg-slate-200  transition duration-200">
            <h1>Favourite</h1>
           </button>
           
