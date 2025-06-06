@@ -37,7 +37,7 @@
         <h1 class="mt-5 text-lg">Select size</h1>
         <p class="text-slate-600 text-sm">Fits large; we recommend ordering half a size down</p>
         <div class="mt-2 grid grid-cols-6 gap-1 ">
-          <div class="border border-slate-200 text-center rounded-lg p-3 cursor-pointer hover:bg-slate-200" v-for="(size, index) in sizes" :key="index">{{ size }}</div>
+          <div class="border border-slate-200 text-center rounded-lg p-3 cursor-pointer hover:bg-slate-200 hover:shadow-md" v-for="(size, index) in sizes" :key="index">{{ size }}</div>
           
         </div>
         <div class="mt-5 flex flex-col space-y-4">
