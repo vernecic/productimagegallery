@@ -1,6 +1,8 @@
 <template>
-  <div class="flex justify-center items-center min-h-screen">
-    <div class="flex gap-10">
+  <div class="min-h-screen ">
+    <div class="flex flex-col justify-center items-center mt-20 ">
+    <div class=" flex flex-col ">
+      <div class="flex gap-10 ">
       <div class=" relative">
         <img :src="curPic" alt="" class="w-128 rounded-lg " />
         <div class="absolute bottom-1 right-0 mr-2 flex mb-2 items-center justify-center">
@@ -45,10 +47,26 @@
            <button class="text-center border border-black  px-6 py-4 font-semibold rounded-full cursor-pointer w-full shadow-xl hover:bg-slate-200  transition duration-200">
            <h1>Favourite</h1>
           </button>
+          </div>
+          </div>
+        
           
         </div>
+        <div >
+          <h1 class="text-lg mt-10 font-semibold">Related products</h1>
+          <div class="flex gap-8 mt-2">
+ 
+            <div v-for="(product, index) in relatedProducts" :key="index" class="cursor-pointer  mt-2">
+              <img :src="product.image" alt="" class="w-64 hover:scale-105 shadow-md hover:shadow-lg">
+              <h1 class="text-lg font-medium mt-2">{{ product.name }}</h1>
+                <p>{{ product.price }}</p></div>
+
+          </div>
+          </div>
       </div>
+    
     </div>
+    
   </div>
 </template>
 
@@ -68,6 +86,24 @@ const images = [
 const sizes = ['40', '41', '42', '42.5', '43', '44', '44.5', '45', '46']
 
 const curPic = ref(images[0])
+
+const relatedProducts = ref([
+  {
+  name: 'Nike Initiator',
+  price: 79.99,
+  image: new URL('../images/initiator.jpg', import.meta.url).href
+},
+  {
+    name: 'Nike Field General',
+    price: 109.99,
+   image: new URL('../images/general.jpg', import.meta.url).href
+  },
+  {
+    name: 'Nike Shox TL',
+    price: 189.99,
+    image: new URL('../images/shoxtl.jpg', import.meta.url).href
+  }
+])
 
 const curPicIndex = computed(() =>{
   return images.indexOf(curPic.value)
